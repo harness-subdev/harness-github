@@ -24,4 +24,15 @@ GitHub 저장소 작업을 위한 Codex 스킬입니다. 복합 작업은 `githu
 
 공통 `requesting-code-review`와 `receiving-code-review`는 harness-global의 `code-review` 요청/피드백 모드로 통합했습니다. 현재 분류와 저장소 매핑은 [공통 스킬 정책](github-remote-push/references/skill-policy.md), 채택 출처는 [출처 및 이관 기록](github-workflow/references/source-adoption.md)을 확인하세요.
 
-이 저장소에는 현재 자동 빌드나 버전/릴리스 파이프라인이 없습니다. 게시 시 스킬 validator와 참조 검사를 수행하며, 원격 push 자체가 빌드 성공이나 릴리스 발행을 뜻하지 않습니다.
+## 빌드와 버전 관리
+
+`VERSION`이 저장소 전체의 단일 버전이며 초기값은 `0.1.0`입니다. Git과 Node.js 24 환경에서 다음 명령을 사용합니다.
+
+```sh
+node --test scripts/*.test.mjs
+bash scripts/build.sh
+```
+
+빌드는 커밋된 소스를 검사하고 `dist/`에 버전·SHA가 포함된 소스 패키지와 SHA-256 체크섬을 만듭니다. 패키지에는 스킬 리소스, 버전별 변경 내역과 run/attempt 출처가 포함됩니다.
+
+PR·main push·수동 실행은 빌드만 수행합니다. 다음 버전은 `VERSION`과 `CHANGELOG.md`를 수정한 PR로 준비하며, 일치하는 `v*` 태그 push에서만 릴리스를 게시합니다. [빌드·버전·릴리스 운영 안내](docs/RELEASING.md)를 참고하세요.
