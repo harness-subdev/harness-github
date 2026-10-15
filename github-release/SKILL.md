@@ -24,6 +24,8 @@ Reuse Changesets, Release Please, semantic-release, ecosystem-native commands or
 
 ## Publish or recover
 
+Release titles must be exactly the version tag, such as `v0.1.1` (`vMAJOR.MINOR.PATCH`). Use `--title "$TAG"` with `gh release create` or `gh release edit`; repository names, product names and descriptive text belong in the release body, never the title. Apply this contract when configuring publishers, preparing release commands, publishing or repairing release metadata. After publication, fetch the release and require its title to equal the expected version tag before reporting success.
+
 Use the maintained publisher only within authorization and required approvals. Establish tag/version/tested-commit agreement, including peeled annotated tags. Treat tags and published asset bytes as immutable: never force-move tags, overwrite assets, or delete/recreate releases to make a retry pass.
 
 Resume a partial draft only for the same version/commit with verified existing asset bytes and an idempotent publisher that adds only missing assets and refuses conflicts. Query uncertain remote state before retrying. Verify actual published bytes/checksums, tag, title, notes and publication state; command success alone is insufficient.
