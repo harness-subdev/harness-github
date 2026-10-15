@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub Issues"
+  short_description: "개별 이슈 조회·작성·수정·분류와 구현을 위한 근거 정리"
+  default_prompt: "$github-issues로 이 이슈의 기존 정보와 관련 구현을 확인하고 요청한 작업을 진행해줘."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub 릴리스"
+  short_description: "GitHub Actions 버전·릴리스 설정과 후보·발행·복구를 관리합니다"
+  default_prompt: "$github-release로 현재 저장소의 버전 정책과 기존 릴리스 도구를 확인하고 요청한 릴리스 준비 또는 복구 작업을 진행해줘."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub 빌드"
+  short_description: "GitHub Actions 빌드 설정·상태·실패와 산출물을 검증합니다"
+  default_prompt: "$github-build로 현재 저장소의 GitHub Actions 빌드와 산출물을 확인하고 요청한 설정 또는 복구 작업을 진행해줘."

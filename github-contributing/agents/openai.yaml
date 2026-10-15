@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub Contributing"
+  short_description: "기여 문서·보안 안내·소유권·이슈 폼·PR 템플릿 정비"
+  default_prompt: "$github-contributing으로 저장소의 기여 규칙을 점검하고 필요한 부분을 정비해줘."

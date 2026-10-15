@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub PR"
+  short_description: "전체 변경을 반영한 PR 작성과 리뷰 대화·병합 상태 관리"
+  default_prompt: "$github-pr로 이 PR의 전체 변경과 대화 상태를 확인하고 요청한 작업을 진행해줘."

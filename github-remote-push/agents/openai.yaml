@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub Remote Push"
+  short_description: "Publish selected projects or skills to verified GitHub remotes"
+  default_prompt: "Use $github-remote-push to publish this project's approved changes to its verified GitHub repository."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub Workflow"
+  short_description: "이슈·PR·게시·빌드·릴리스 작업의 순서와 완료 근거 관리"
+  default_prompt: "$github-workflow로 이 GitHub 작업의 필요한 단계를 선택하고 검증까지 진행해줘."
