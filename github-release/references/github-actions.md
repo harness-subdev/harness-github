@@ -16,6 +16,9 @@ Distinguish current version fields from historical changelogs, fixtures, migrati
 
 Honor explicit tag policy such as `vMAJOR.MINOR.PATCH` from the real version, for example `v0.1.0`. Inspect actual Git tags, release titles, run numbers and artifact names separately when a user reports a numeric tag such as `1`. An existing immutable tag or published asset requires a new appropriate version for changed bytes. Keep workflow-local run numbers and increasing retry attempts in build metadata, not in the release version. Avoid production version bumps on every CI run unless the product explicitly requires them.
 
+Release title contract: the title is exactly `vMAJOR.MINOR.PATCH`, matching the product version tag (for example `v0.1.1`). Set `--title "$TAG"` in the maintained publisher and all create/edit commands. Keep repository/product names, change descriptions and build identifiers in the release body or artifact metadata. An existing publisher that uses a title such as `harness-github v0.1.1` must be corrected when release setup or repair is authorized; do not inherit that format as repository policy. For an authorized metadata-only correction, edit the title without moving the tag or replacing asset bytes.
+
+
 Require version-specific notes from the actual diff or maintained changelog: shipped components, relevant features/fixes, compatibility impact and verification. Surface those with version, exact SHA and run/attempt in build summaries and release body. Reject missing or stale-version notes before publication; a bare version or generic commit list is insufficient.
 
 ## Setup: connect preparation and publication
@@ -66,7 +69,7 @@ Resume a partial draft only when version and intended tested commit match, every
 
 Never force-move tags, overwrite/clobber assets, delete/recreate a release, or make a new bump to conceal a failed publication. Conflicting published bytes stop that mutation; corrected bytes need a new version under repository policy. After an uncertain publish/upload result, inspect remote state before retrying.
 
-Verify final peeled tag/commit, publication/draft/prerelease state, version-bearing title and artifact names, release notes, asset contents and checksums. Include exact run/attempt separately from product version. A successful command or CI run is not proof that the actual release was published. Keep preparation, local logic validation and verified public publication distinct in the report.
+Verify final peeled tag/commit, publication/draft/prerelease state, title exactly equal to the expected version tag, version-bearing artifact names, release notes, asset contents and checksums. Include exact run/attempt separately from product version. A successful command or CI run is not proof that the actual release was published. Keep preparation, local logic validation and verified public publication distinct in the report.
 
 ## Sources and inherited limits
 
